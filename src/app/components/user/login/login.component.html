@@ -1,0 +1,24 @@
+
+<div class="login-container">
+  <div class="card">
+    <form class="login-form" (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="image-and-name-container">
+        <img src="assets/logoIterate-frame-login.jpg" alt="Logo" class="rounded-image">
+        <div class="app-name">
+          Iterate
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="!loginForm.form.valid">Entrar</button>
+      </div>
+    </form>
+  </div>
+</div>

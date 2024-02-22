@@ -1,0 +1,31 @@
+
+<mat-toolbar class="mat-elevation-z3">
+  <button mat-icon-button (click)="toggleLeftDrawer()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img src="../../../assets/logoIterate-frame.png">
+  <span>Iterate</span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+    <mat-nav-list>
+      <a *ngFor="let item of linksList" [routerLink]="item.route" mat-list-item>
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <span matListItemTitle>{{ item.label }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Conteúdo da aplicação -->
+  <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+    <div class="container">
+      <router-outlet/>
+    </div>
+    <h1></h1>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
